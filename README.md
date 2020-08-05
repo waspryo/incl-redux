@@ -34,6 +34,7 @@ let persons = null;
 ```
 
 ## propsで受け取った値を元に条件分岐
+これを
 ```bash
     {
         props.inputLength > 5 ?
@@ -41,7 +42,7 @@ let persons = null;
           <p>text short</p>
       }
 ```
-* こう書くとベター
+こう書くとベター
 ```bash
 const validation = (props) => {
   let validationMessage = 'Text long enough '
@@ -56,3 +57,18 @@ const validation = (props) => {
 
 }
 ```
+
+## 配列ないの要素を消す方法
+```bash
+deletChartHandler = (index) => {
+    // ばらす
+    const text = this.state.userInput.split('')
+    // 要素一番を消す
+    text.splice(index, 1)
+    // 結合させる
+    const updatedText = text.join('');
+    this.setState({ userInput: updatedText })
+  }
+```
+}消す
+}
