@@ -27,8 +27,17 @@ let persons = null;
         <button
           style={style}
           onClick={this.togglePersonsHandler}>Toggle Persons</button>
+          // 変数personを出す
         {persons}
       </div>
     );
 ```
 
+## propsで受け取った値を元に条件分岐
+```bash
+    {
+        props.inputLength > 5 ?
+          <p>text long</p> :
+          <p>text short</p>
+      }
+```
