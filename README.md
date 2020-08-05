@@ -41,3 +41,18 @@ let persons = null;
           <p>text short</p>
       }
 ```
+* こう書くとベター
+```bash
+const validation = (props) => {
+  let validationMessage = 'Text long enough '
+  if (props.inputLength <= 5) {
+    validationMessage = 'text too short'
+  }
+  return (
+    <div>
+      <p>{validationMessage}</p>
+    </div >
+  )
+
+}
+```
