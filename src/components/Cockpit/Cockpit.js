@@ -4,10 +4,21 @@ const cockpit = (props) => {
 
   useEffect(() => {
     console.log('useEffect')
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       alert('Saved data to cloud')
     }, 1000);
+    return () => {
+      clearTimeout(timer)
+      console.log('Cockpit clean work in useEffect')
+    }
   }, [])
+
+  useEffect(() => {
+    console.log('useEffect')
+    return () => {
+      console.log('Cockpit clean work in useEffect 2')
+    }
+  })
 
   console.log(props)
   const assignedClasses = [];
