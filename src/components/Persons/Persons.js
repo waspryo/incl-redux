@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ErrorBoundary from '../../ErrorBoundary/ErrorBoundary';
+// import ErrorBoundary from '../../ErrorBoundary/ErrorBoundary';
 import Person from '../Persons/Person/Person';
 
 
@@ -43,14 +43,13 @@ class Persons extends Component {
     console.log('persons rendering...')
     return this.props.persons.map((person, index) => {
       return (
-        <ErrorBoundary key={person.id}>
-          <Person
-            click={() => this.props.clicked(index)}
-            name={person.name}
-            age={person.age}
-            changed={event => this.props.changed(event, person.id)}
-          />
-        </ErrorBoundary>
+        <Person
+          click={() => this.props.clicked(index)}
+          name={person.name}
+          age={person.age}
+          changed={event => this.props.changed(event, person.id)}
+          isAuth={this.props.isAuthenticated}
+        />
       );
     })
   }
