@@ -82,24 +82,12 @@ const cockpit = (props) => {
 
 
   useEffect(() => {
-    console.log('useEffect')
-    // const timer = setTimeout(() => {
-    //   alert('Saved data to cloud')
-    // }, 1000);
     toggleBtnRef.current.click()
     return () => {
       console.log('Cockpit clean work in useEffect')
     }
   }, [])
 
-  useEffect(() => {
-    console.log('useEffect')
-    return () => {
-      console.log('Cockpit clean work in useEffect 2')
-    }
-  })
-
-  console.log(props)
   const assignedClasses = [];
   let btnClass = ''
   if (props.showPersons) {
